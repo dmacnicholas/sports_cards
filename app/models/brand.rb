@@ -1,3 +1,3 @@
 class Brand < ApplicationRecord
-
-end  
+  has_many :cards
+end
