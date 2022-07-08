@@ -1,3 +1,3 @@
 class Card < ApplicationRecord
-
-end  
+  belongs_to :brand
+end
