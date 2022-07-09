@@ -1,0 +1,8 @@
+<% @cards.each do |card| %>
+<h3><%= card.player_name %></h3>
+  <p><%= card.description %></p>
+  <p><%= card.graded %></p>
+  <p><%= card.value %></p>
+  <p><%= card.created_at %></p>
+  <p><%= card.updated_at %></p>
+<% end %>
