@@ -14,7 +14,7 @@ RSpec.describe 'Brands Show' do
   it 'shows all brands ids and attributes' do
     visit "/brands/#{@prizm.id}"
 
-    expect(page).to have_content(@prizm.id)
+
     expect(page).to have_content(@prizm.name)
     expect(page).to have_content(@prizm.year)
     expect(page).to have_content(@prizm.sold_at_retail)
