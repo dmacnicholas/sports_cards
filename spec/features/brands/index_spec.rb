@@ -18,4 +18,25 @@ RSpec.describe 'Brands Index' do
     expect(page).to have_content(@brand_2.name)
     expect(page).to have_content(@brand_3.name)
   end
+
+  # User Story 6, Parent Index sorted by Most Recently Created
+    # As a visitor
+    # When I visit the parent index,
+    # I see that records are ordered by most recently created first
+    # And next to each of the records I see when it was created
+  it 'orders brands by most recently created' do
+    visit '/brands'
+
+    within '#brand_0' do
+      expect(page).to have_content(@brand_3.name)
+    end
+
+    within '#brand_1' do
+      expect(page).to have_content(@brand_2.name)
+    end
+
+    within '#brand_2' do
+      expect(page).to have_content(@brand_1.name)
+    end
+  end
 end
