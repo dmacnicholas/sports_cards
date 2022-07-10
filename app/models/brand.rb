@@ -4,4 +4,9 @@ class Brand < ApplicationRecord
   validates :year, presence: true
   validates :sold_at_retail, inclusion: [true, false]
 
+  def self.sort_by_new
+    order(created_at: :desc)
+  end
+
+
 end
