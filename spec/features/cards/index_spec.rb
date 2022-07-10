@@ -26,6 +26,16 @@ RSpec.describe 'Cards Index' do
       expect(page).to have_content(@card_3.description)
       expect(page).to have_content(@card_3.graded)
       expect(page).to have_content(@card_3.value)
-
+    end
+    # User Story 8, Child Index Link
+      # As a visitor
+      # When I visit any page on the site
+      # Then I see a link at the top of the page that takes me to the Child Index
+      it 'has link to card index' do
+        visit '/cards'
+        expect(page).to have_link('Cards Index')
+        click_link 'Cards Index'
+        expect(current_path).to eq('/cards')
+        # save_and_open_page
     end
 end

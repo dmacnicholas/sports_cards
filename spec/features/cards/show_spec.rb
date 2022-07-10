@@ -23,4 +23,15 @@ RSpec.describe 'Cards Show' do
 
     expect(page).to_not have_content(@card_2.player_name)
   end
+  # User Story 8, Child Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+    it 'has link to card index' do
+      visit "/cards/#{@card_1.id}"
+      expect(page).to have_link('Cards Index')
+      click_link 'Cards Index'
+      expect(current_path).to eq('/cards')
+      # save_and_open_page
+  end
 end
