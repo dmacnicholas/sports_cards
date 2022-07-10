@@ -30,4 +30,15 @@ RSpec.describe 'Brands Index' do
     expect(@brand_3.name).to appear_before(@brand_2.name)
     expect(@brand_2.name).to appear_before(@brand_1.name)
   end
+
+  # User Story 8, Child Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+  it 'has link to card index' do
+    visit '/brands'
+    expect(page).to have_link('Cards Index')
+    click_link 'Cards Index'
+    expect(current_path).to eq('/cards')
+  end
 end
