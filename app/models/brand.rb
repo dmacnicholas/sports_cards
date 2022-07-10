@@ -8,5 +8,8 @@ class Brand < ApplicationRecord
     order(created_at: :desc)
   end
 
+  def card_count
+    cards.count
+  end
 
 end
