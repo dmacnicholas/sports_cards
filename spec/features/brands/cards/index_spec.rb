@@ -10,11 +10,10 @@ RSpec.describe 'Brand Cards Index' do
     @card_3 = @brand_1.cards.create!(player_name: 'Ja Morant', description: 'Purple Ice Auto', graded: true, value: 900.00)
     @card_4 = @brand_2.cards.create!(player_name: 'Stephen Curry', description: 'Green Swirl', graded: false, value: 92.00)
   end
-  # User Story 5, Parent Children Index
-
- # As a visitor
- # When I visit '/parents/:parent_id/child_table_name'
- # Then I see each Child that is associated with that Parent with each Child's attributes:
+    # User Story 5, Parent Children Index
+      # As a visitor
+      # When I visit '/parents/:parent_id/child_table_name'
+      # Then I see each Child that is associated with that Parent with each Child's attributes:
   it 'shows each card and all attributes of card associated with a brand' do
    visit "/brands/#{@brand_1.id}/cards"
 
