@@ -56,4 +56,5 @@ RSpec.describe 'Brands Show' do
     click_link 'Brands Index'
     expect(current_path).to eq('/brands')
     # save_and_open_page
+  end
 end
