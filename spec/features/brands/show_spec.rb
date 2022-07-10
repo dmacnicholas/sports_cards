@@ -39,11 +39,21 @@ RSpec.describe 'Brands Show' do
     # As a visitor
     # When I visit any page on the site
     # Then I see a link at the top of the page that takes me to the Child Index
-    it 'has link to card index' do
-      visit "/brands/#{@brand_1.id}"
-      expect(page).to have_link('Cards Index')
-      click_link 'Cards Index'
-      expect(current_path).to eq('/cards')
-      # save_and_open_page
-    end
+  it 'has link to card index' do
+    visit "/brands/#{@brand_1.id}"
+    expect(page).to have_link('Cards Index')
+    click_link 'Cards Index'
+    expect(current_path).to eq('/cards')
+    # save_and_open_page
+  end
+  # User Story 9, Parent Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Parent Index
+  it 'has link to brand index' do
+    visit "/brands/#{@brand_1.id}"
+    expect(page).to have_link('Brands Index')
+    click_link 'Brands Index'
+    expect(current_path).to eq('/brands')
+    # save_and_open_page
 end
