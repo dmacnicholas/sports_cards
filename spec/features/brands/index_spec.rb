@@ -27,16 +27,7 @@ RSpec.describe 'Brands Index' do
   it 'orders brands by most recently created' do
     visit '/brands'
 
-    within '#brand_0' do
-      expect(page).to have_content(@brand_3.name)
-    end
-
-    within '#brand_1' do
-      expect(page).to have_content(@brand_2.name)
-    end
-
-    within '#brand_2' do
-      expect(page).to have_content(@brand_1.name)
-    end
+    expect(@brand_3.name).to appear_before(@brand_2.name)
+    expect(@brand_2.name).to appear_before(@brand_1.name)
   end
 end

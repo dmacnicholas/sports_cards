@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
   def index
-    @brands = Brand.all
+    @brands = Brand.sort_by_new
   end
   def show
     @brand = Brand.find(params[:id])
