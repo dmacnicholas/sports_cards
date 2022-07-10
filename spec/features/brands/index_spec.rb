@@ -29,6 +29,7 @@ RSpec.describe 'Brands Index' do
 
     expect(@brand_3.name).to appear_before(@brand_2.name)
     expect(@brand_2.name).to appear_before(@brand_1.name)
+    # save_and_open_page
   end
 
   # User Story 8, Child Index Link
@@ -40,5 +41,6 @@ RSpec.describe 'Brands Index' do
     expect(page).to have_link('Cards Index')
     click_link 'Cards Index'
     expect(current_path).to eq('/cards')
+    # save_and_open_page
   end
 end
