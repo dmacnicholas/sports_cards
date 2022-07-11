@@ -1,4 +1,8 @@
+<p><a href="/brands">Brands Index</a></p>
+<p><a href="/cards">Cards Index</a></p>
+
 <h1><%= @brand.name %></h1>
+<p><a href="/brands/<%="#{@brand.id}"%>/cards">Cards</a></p>
 <p>Number of Cards: <%= @brand.card_count %></p>
 <p>Year: <%= @brand.year %></p>
 <p>Sold at Retail: <%= @brand.sold_at_retail %></p>

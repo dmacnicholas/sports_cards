@@ -11,16 +11,38 @@ RSpec.describe 'Cards Show' do
    # As a visitor
    # When I visit '/child_table_name/:id'
    # Then I see the child with that id including the child's attributes:
-   it 'shows all of the attributes for a card when viewing /card/:id' do
-     visit "/cards/#{@card_1.id}"
+  it 'shows all of the attributes for a card when viewing /card/:id' do
+    visit "/cards/#{@card_1.id}"
 
-     expect(page).to have_content(@card_1.player_name)
-     expect(page).to have_content(@card_1.description)
-     expect(page).to have_content(@card_1.graded)
-     expect(page).to have_content(@card_1.value)
-     expect(page).to have_content(@card_1.created_at)
-     expect(page).to have_content(@card_1.updated_at)
+    expect(page).to have_content(@card_1.player_name)
+    expect(page).to have_content(@card_1.description)
+    expect(page).to have_content(@card_1.graded)
+    expect(page).to have_content(@card_1.value)
+    expect(page).to have_content(@card_1.created_at)
+    expect(page).to have_content(@card_1.updated_at)
 
     expect(page).to_not have_content(@card_2.player_name)
+  end
+  # User Story 8, Child Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+  it 'has link to card index' do
+    visit "/cards/#{@card_1.id}"
+    expect(page).to have_link('Cards Index')
+    click_link 'Cards Index'
+    expect(current_path).to eq('/cards')
+    # save_and_open_page
+  end
+  # User Story 9, Parent Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Parent Index
+  it 'has link to brand index' do
+    visit "/cards/#{@card_1.id}"
+    expect(page).to have_link('Brands Index')
+    click_link 'Brands Index'
+    expect(current_path).to eq('/brands')
+    # save_and_open_page
   end
 end
