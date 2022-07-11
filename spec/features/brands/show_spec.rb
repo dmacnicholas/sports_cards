@@ -34,6 +34,7 @@ RSpec.describe 'Brands Show' do
     visit "/brands/#{@brand_1.id}"
 
     expect(page).to have_content("Number of Cards: #{@brand_1.cards.count}")
+    # save_and_open_page
   end
   # User Story 8, Child Index Link
     # As a visitor
