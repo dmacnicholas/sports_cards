@@ -1,0 +1,11 @@
+<h1>Update Brand</h1>
+
+<%= form_with url: "/brands/#{@brand.id}", method: :patch, local: true do |form| %>
+  <p><%= form.label :name %>
+  <%= form.text_field :name %></p>
+  <p><%= form.label :year %>
+  <%= form.number_field :year %></p>
+  <p><%= form.label :sold_at_retail %>
+  <%= form.check_box :sold_at_retail %></p>
+  <p><%= form.submit 'Update Brand' %></p>
+<% end %>

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/brands/new', to: 'brands#new'
   post '/brands', to: 'brands#create'
   get '/brands/:id', to: 'brands#show'
+  get '/brands/:id/edit', to: 'brands#edit'
+  patch '/brands/:id', to: 'brands#update'
   get '/cards', to: 'cards#index'
   get '/cards/:id', to: 'cards#show'
   get '/brands/:id/cards', to: 'brand_cards#index'

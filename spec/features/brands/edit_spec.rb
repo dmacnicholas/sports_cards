@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Brands New' do
+RSpec.describe 'Brands Edit' do
   before :each do
     @brand_1 = Brand.create!(name: 'Prizm', year: 2022, sold_at_retail: false)
     @brand_2 = Brand.create!(name: 'Mosaic', year: 2022, sold_at_retail: true)
@@ -25,11 +25,10 @@ RSpec.describe 'Brands New' do
    fill_in 'Name', with: 'Chronicles'
    fill_in 'Year', with: '2021'
    check 'Sold at retail'
-   click_button 'Update Brand'
+   click_on 'Update Brand'
 
    expect(current_path).to eq("/brands/#{@brand_1.id}")
    expect(page).to have_content('Chronicles')
    expect(page).to have_content('2021')
-   expect(page).to have_content('Sold at retail')
  end
 end
