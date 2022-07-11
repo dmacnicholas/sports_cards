@@ -63,8 +63,8 @@ RSpec.describe 'Brands Show' do
     # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
   it 'has link to the brands card index' do
     visit "/brands/#{@brand_1.id}"
-    expect(page).to have_link("#{@brand_1.name} Cards")
-    click_link "#{@brand_1.name} Cards"
+    expect(page).to have_link('Cards')
+    click_link 'Cards'
     expect(current_path).to eq("/brands/#{@brand_1.id}/cards")
     # save_and_open_page
   end
