@@ -17,7 +17,6 @@ RSpec.describe 'Brands Show' do
   it 'shows all brands ids and attributes' do
     visit "/brands/#{@brand_1.id}"
 
-
     expect(page).to have_content(@brand_1.name)
     expect(page).to have_content(@brand_1.year)
     expect(page).to have_content(@brand_1.sold_at_retail)
@@ -42,6 +41,7 @@ RSpec.describe 'Brands Show' do
     # Then I see a link at the top of the page that takes me to the Child Index
   it 'has link to card index' do
     visit "/brands/#{@brand_1.id}"
+
     expect(page).to have_link('Cards Index')
     click_link 'Cards Index'
     expect(current_path).to eq('/cards')
@@ -53,6 +53,7 @@ RSpec.describe 'Brands Show' do
     # Then I see a link at the top of the page that takes me to the Parent Index
   it 'has link to brand index' do
     visit "/brands/#{@brand_1.id}"
+
     expect(page).to have_link('Brands Index')
     click_link 'Brands Index'
     expect(current_path).to eq('/brands')
@@ -64,6 +65,7 @@ RSpec.describe 'Brands Show' do
     # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
   it 'has link to the brands card index' do
     visit "/brands/#{@brand_1.id}"
+
     expect(page).to have_link('Cards')
     click_link 'Cards'
     expect(current_path).to eq("/brands/#{@brand_1.id}/cards")

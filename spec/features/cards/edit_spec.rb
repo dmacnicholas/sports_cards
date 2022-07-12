@@ -21,6 +21,7 @@ RSpec.describe 'Edit Card' do
     # and I am redirected to the Child Show page where I see the Child's updated information
   it 'can update a card' do
     visit "/cards/#{@card_1.id}/edit"
+
     fill_in 'Player name', with: 'Michael Jordan'
     fill_in 'Description', with: 'Red Ice Refactor'
     fill_in 'Value', with: '1200.00'

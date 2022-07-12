@@ -11,6 +11,7 @@ RSpec.describe 'Cards Index' do
   # As a visitor
   # When I visit '/child_table_name'
   # Then I see each Child in the system including the Child's attributes:
+  # THIS USER STORY IS OVERRIDDEN by USER STORY 15
   it 'shows the name of each card and attributes on the index page' do
     visit '/cards'
 
@@ -18,10 +19,10 @@ RSpec.describe 'Cards Index' do
     expect(page).to have_content(@card_1.description)
     expect(page).to have_content(@card_1.graded)
     expect(page).to have_content(@card_1.value)
-    expect(page).to have_content(@card_2.player_name)
-    expect(page).to have_content(@card_2.description)
-    expect(page).to have_content(@card_2.graded)
-    expect(page).to have_content(@card_2.value)
+    expect(page).to_not have_content(@card_2.player_name)
+    expect(page).to_not have_content(@card_2.description)
+    expect(page).to_not have_content(@card_2.graded)
+    expect(page).to_not have_content(@card_2.value)
     expect(page).to have_content(@card_3.player_name)
     expect(page).to have_content(@card_3.description)
     expect(page).to have_content(@card_3.graded)
@@ -44,9 +45,26 @@ RSpec.describe 'Cards Index' do
     # Then I see a link at the top of the page that takes me to the Parent Index
   it 'has link to brand index' do
     visit '/cards'
+
     expect(page).to have_link('Brands Index')
     click_link 'Brands Index'
     expect(current_path).to eq('/brands')
     # save_and_open_page
+  end
+  # User Story 15, Child Index only shows `true` Records
+    # As a visitor
+    # When I visit the child index
+    # Then I only see records where the boolean column is `true`
+  it 'only displays graded cards' do
+    visit '/cards'
+
+    expect(page).to have_content(@card_1.player_name)
+    expect(page).to have_content(@card_1.description)
+    expect(page).to have_content(@card_1.value)
+    expect(page).to have_content(@card_1.graded)
+    expect(page).to_not have_content(@card_2.player_name)
+    expect(page).to_not have_content(@card_2.description)
+    expect(page).to_not have_content(@card_2.value)
+    expect(page).to_not have_content(@card_2.graded)
   end
 end

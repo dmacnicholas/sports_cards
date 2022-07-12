@@ -2,7 +2,7 @@
 <p><a href="/cards">Cards Index</a></p>
 
 <h1>All Cards</h1>
-<% @cards.each do |card| %>
+<% @cards.show_graded_cards.each do |card| %>
   <h3>Player Name: <%= card.player_name %></h3>
   <p>Description: <%= card.description %></p>
   <p>Graded: <%= card.graded %></p>

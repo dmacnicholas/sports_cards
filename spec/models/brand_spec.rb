@@ -8,7 +8,7 @@ RSpec.describe Brand, type: :model do
   end
   describe 'relationships' do
     it {should have_many(:cards) }
-end
+  end
 
   describe 'validations' do
     it {should validate_presence_of(:name)}
@@ -22,6 +22,6 @@ end
 
       expect(Brand.sort_by_new.first.id).to eq(@brand_3.id)
       expect(Brand.sort_by_new.last.id).to eq(@brand_1.id)
-    end  
+    end
   end
 end

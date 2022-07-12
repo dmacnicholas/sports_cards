@@ -11,3 +11,5 @@
   <p><%= card.created_at %></p>
   <p><%= card.updated_at %></p>
 <% end %>
+
+<%= link_to 'Display in Alphabetical Order', "/brands/#{@brand.id}/cards?sort=alpha" %>

@@ -66,4 +66,25 @@ RSpec.describe 'Brand Cards Index' do
     expect(current_path).to eq('/brands')
     # save_and_open_page
   end
+  # User Story 16, Sort Parent's Children in Alphabetical Order by name
+    # As a visitor
+    # When I visit the Parent's children Index Page
+    # Then I see a link to sort children in alphabetical order
+    # When I click on the link
+    # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+  it 'has a link to sort the cards in alphabetical order' do
+    visit "/brands/#{@brand_1.id}/cards"
+
+    expect(@card_1.player_name).to appear_before(@card_2.player_name)
+    expect(@card_2.player_name).to appear_before(@card_3.player_name)
+
+    expect(page).to have_link('Display in Alphabetical Order')
+    click_link 'Display in Alphabetical Order'
+    expect(page).to have_current_path("/brands/#{@brand_1.id}/cards?sort=alpha")
+
+    expect(@card_3.player_name).to appear_before(@card_1.player_name)
+    expect(@card_1.player_name).to appear_before(@card_2.player_name)
+    #  save_and_open_page
+  end
+
 end
