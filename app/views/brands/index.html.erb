@@ -3,9 +3,11 @@
 
 <h1>Brands</h1>
 
+<%= link_to 'New Brand', '/brands/new' %>
 
-<% @brands.each do |brand| %>
+<% @brands.each_with_index do |brand, index| %>
+<div id="brand-<%=index%>">
   <h3>Name: <%= brand.name %></h3>
   <p>Created At: <%= brand.created_at %></p>
-
+</div>
 <% end %>

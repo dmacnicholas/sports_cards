@@ -1,8 +1,10 @@
 <p><a href="/brands">Brands Index</a></p>
 <p><a href="/cards">Cards Index</a></p>
 
+<%= link_to 'New Card', "/brands/#{@brand.id}/cards/new" %>
+
 <% @cards.each do |card| %>
-<h3><%= card.player_name %></h3>
+  <h3><%= card.player_name %></h3>
   <p><%= card.description %></p>
   <p><%= card.graded %></p>
   <p><%= card.value %></p>
