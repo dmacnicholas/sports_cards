@@ -49,4 +49,21 @@ RSpec.describe 'Cards Index' do
     expect(current_path).to eq('/brands')
     # save_and_open_page
   end
+  # User Story 15, Child Index only shows `true` Records
+    # As a visitor
+    # When I visit the child index
+    # Then I only see records where the boolean column is `true`
+
+  it 'only displays graded cards' do
+    visit '/cards'
+
+    expect(page).to have_content(@card_1.player_name)
+    expect(page).to have_content(@card_1.description)
+    expect(page).to have_content(@card_1.value)
+    expect(page).to have_content("Graded")
+    expect(page).to_not have_content(@card_2.player_name)
+    expect(page).to_not have_content(@card_2.description)
+    expect(page).to_not have_content(@card_2.value)
+    expect(page).to_not have_content("Graded")
+  end
 end
