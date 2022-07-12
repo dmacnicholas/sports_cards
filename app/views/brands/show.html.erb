@@ -1,6 +1,8 @@
 <p><a href="/brands">Brands Index</a></p>
 <p><a href="/cards">Cards Index</a></p>
 
+<p><%= link_to "Update Brand", "/brands/#{@brand.id}/edit" %></p>
+
 <h1><%= @brand.name %></h1>
 <p><a href="/brands/<%="#{@brand.id}"%>/cards">Cards</a></p>
 <p>Number of Cards: <%= @brand.card_count %></p>

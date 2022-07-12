@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   post '/brands/:id/cards', to: 'brand_cards#create'
   get '/cards', to: 'cards#index'
   get '/cards/:id', to: 'cards#show'
-
+  get '/cards/:id/edit', to: 'cards#edit'
+  patch '/cards/:id', to: 'cards#update'
 end

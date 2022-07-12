@@ -1,0 +1,13 @@
+<h1>Update Card</h1>
+
+<%= form_with url: "/cards/#{@card.id}", method: :patch, local: true do |form| %>
+  <p><%= form.label :player_name %>
+  <%= form.text_field :player_name %></p>
+  <p><%= form.label :description %>
+  <%= form.text_field :description %></p>
+  <p><%= form.label :graded %>
+  <%= form.check_box :graded %></p>
+  <p><%= form.label :value %>
+  <%= form.number_field :value %></p>
+  <p><%= form.submit 'Update Card' %></p>
+<% end %>
