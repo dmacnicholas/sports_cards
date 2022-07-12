@@ -32,7 +32,7 @@ RSpec.describe 'Create Card' do
 
     expect(current_path).to eq("/brands/#{@brand_1.id}/cards")
     expect(page).to have_content('Nikola Jokic')
-    expect(page).to have_content('555.00')
+    expect(page).to have_content(555.00)
     expect(page).to have_content('Blue Ice Refactor')
   end
 end
