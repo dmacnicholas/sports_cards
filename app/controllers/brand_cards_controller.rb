@@ -1,10 +1,10 @@
 class BrandCardsController < ApplicationController
   def index
-    brand = Brand.find(params[:id])
+    @brand = Brand.find(params[:id])
     if params[:sort] == 'alpha'
-      @cards = brand.cards.alphabetical
+      @cards = @brand.cards.alphabetical
     else
-      @cards = brand.cards
+      @cards = @brand.cards
     end
   end
 

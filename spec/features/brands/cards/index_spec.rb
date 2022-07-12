@@ -84,6 +84,7 @@ RSpec.describe 'Brand Cards Index' do
 
     expect(@card_3.player_name).to appear_before(@card_1.player_name)
     expect(@card_1.player_name).to appear_before(@card_2.player_name)
+    #  save_and_open_page
   end
 
 end

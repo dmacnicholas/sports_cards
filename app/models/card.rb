@@ -10,6 +10,7 @@ class Card < ApplicationRecord
   end
 
   def self.alphabetical
-        order(:player_name)
+    binding.pry
+    order(:player_name)
   end
 end
