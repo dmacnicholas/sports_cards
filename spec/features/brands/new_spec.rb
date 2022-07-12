@@ -33,6 +33,6 @@ RSpec.describe 'Brands New' do
 
     expect(current_path).to eq('/brands')
     expect(page).to have_content('Optic')
-
+    expect(page).to have_content(2022)
   end
 end
