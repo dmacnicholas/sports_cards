@@ -11,6 +11,7 @@ RSpec.describe 'Cards Index' do
   # As a visitor
   # When I visit '/child_table_name'
   # Then I see each Child in the system including the Child's attributes:
+  # THIS USER STORY IS OVERRIDDEN by USER STORY 15
   it 'shows the name of each card and attributes on the index page' do
     visit '/cards'
 
@@ -18,10 +19,10 @@ RSpec.describe 'Cards Index' do
     expect(page).to have_content(@card_1.description)
     expect(page).to have_content(@card_1.graded)
     expect(page).to have_content(@card_1.value)
-    expect(page).to have_content(@card_2.player_name)
-    expect(page).to have_content(@card_2.description)
-    expect(page).to have_content(@card_2.graded)
-    expect(page).to have_content(@card_2.value)
+    expect(page).to_not have_content(@card_2.player_name)
+    expect(page).to_not have_content(@card_2.description)
+    expect(page).to_not have_content(@card_2.graded)
+    expect(page).to_not have_content(@card_2.value)
     expect(page).to have_content(@card_3.player_name)
     expect(page).to have_content(@card_3.description)
     expect(page).to have_content(@card_3.graded)
@@ -60,10 +61,10 @@ RSpec.describe 'Cards Index' do
     expect(page).to have_content(@card_1.player_name)
     expect(page).to have_content(@card_1.description)
     expect(page).to have_content(@card_1.value)
-    expect(page).to have_content("Graded")
+    expect(page).to have_content(@card_1.graded)
     expect(page).to_not have_content(@card_2.player_name)
     expect(page).to_not have_content(@card_2.description)
     expect(page).to_not have_content(@card_2.value)
-    expect(page).to_not have_content("Graded")
+    expect(page).to_not have_content(@card_2.graded)
   end
 end
