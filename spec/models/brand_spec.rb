@@ -22,6 +22,6 @@ RSpec.describe Brand, type: :model do
 
       expect(Brand.sort_by_new.first.id).to eq(@brand_3.id)
       expect(Brand.sort_by_new.last.id).to eq(@brand_1.id)
-    end  
+    end
   end
 end
