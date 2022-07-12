@@ -25,8 +25,16 @@ RSpec.describe Card, type: :model do
   describe 'methods' do
     it 'only shows cards that are graded ' do
 
-    expect(Card.all.length).to eq(4)
-    expect(Card.show_graded_cards.length).to eq(2)
+      expect(Card.all.length).to eq(4)
+      expect(Card.show_graded_cards.length).to eq(2)
+    end
+
+    it 'orders cards alphabetically' do
+
+      expect(Card.all.first.id).to eq(@card_1.id)
+      expect(Card.all.last.id).to eq(@card_4.id)
+      expect(Card.alphabetical.first.id).to eq(@card_3.id)
+      expect(Card.alphabetical.last.id).to eq(@card_2.id)
     end
   end
 
