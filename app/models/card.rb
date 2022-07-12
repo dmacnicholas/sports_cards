@@ -8,4 +8,8 @@ class Card < ApplicationRecord
   def self.show_graded_cards
     where(graded: true)
   end
+
+  def self.alphabetical
+        order(:player_name)
+  end
 end

@@ -31,10 +31,10 @@ RSpec.describe Card, type: :model do
 
     it 'orders cards alphabetically' do
 
-      expect(Card.all.first.id).to eq(@card_1.id)
-      expect(Card.all.last.id).to eq(@card_4.id)
-      expect(Card.alphabetical.first.id).to eq(@card_3.id)
-      expect(Card.alphabetical.last.id).to eq(@card_2.id)
+      expect(@brand_1.cards.all.first.id).to eq(@card_1.id)
+      expect(@brand_1.cards.all.last.id).to eq(@card_3.id)
+      expect(@brand_1.cards.alphabetical.first.id).to eq(@card_3.id)
+      expect(@brand_1.cards.alphabetical.last.id).to eq(@card_2.id)
     end
   end
 
