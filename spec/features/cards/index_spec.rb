@@ -45,6 +45,7 @@ RSpec.describe 'Cards Index' do
     # Then I see a link at the top of the page that takes me to the Parent Index
   it 'has link to brand index' do
     visit '/cards'
+
     expect(page).to have_link('Brands Index')
     click_link 'Brands Index'
     expect(current_path).to eq('/brands')
@@ -54,7 +55,6 @@ RSpec.describe 'Cards Index' do
     # As a visitor
     # When I visit the child index
     # Then I only see records where the boolean column is `true`
-
   it 'only displays graded cards' do
     visit '/cards'
 
