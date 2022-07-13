@@ -63,8 +63,16 @@ RSpec.describe 'Brands Index' do
   it 'has links to edit brands' do
    visit '/brands'
 
-   expect(page).to have_link('Edit')
-   click_link 'Edit'
-   expect(current_path).to eq("/brands/#{@brand_1.id}/edit")
-   end
+    within '#brand-0' do
+      expect(page).to have_link('Edit Brand', href: "/brands/#{@brand_3.id}/edit")
+    end
+
+    within '#brand-1' do
+      expect(page).to have_link('Edit Brand', href: "/brands/#{@brand_2.id}/edit")
+    end
+
+    within '#brand-2' do
+       expect(page).to have_link('Edit Brand', href: "/brands/#{@brand_1.id}/edit")
+    end
+  end
  end
