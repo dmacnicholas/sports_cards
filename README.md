@@ -1,6 +1,6 @@
 # README
 
-# Relational Rails
+# Sports Cards
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@
 
 ## Overview
 
-[Relational Rails](https://github.com/dmacnicholas/sports_cards) is a week solo project during Mod 2 of Turing School's Back-End Engineering program.
+[Sports Cards](https://github.com/dmacnicholas/sports_cards) is a week solo project during Mod 2 of Turing School's Back-End Engineering program.
 
 The goal was to create a functioning Rails Application that can take users through a website and give them the ability to Create, Read, Update, and Destroy data while being able to view the changes on the website (Rails Application).
 
@@ -37,21 +37,21 @@ The project home page and requirements can be found [here](https://backend.turin
 
 ## Getting Started
 
-**Fork this repository:** [Relational Rails](https://github.com/wmedders21/relational_rails
+**Fork this repository:** [Sports Cards](https://github.com/dmacnicholas/sports_cards
 
 **Clone your forked repository:** Run `git clone` with the copied URL.
 
-**Change Directory into Rails App** Run `cd relational_rails` in command line.
+**Change Directory into Rails App** Run `cd sports_cards` in command line.
 
 **Create, Migrate, and Seed Database** Run `rails db:{create, migrate, seed}` in command line.
 
 **Run Rails Server in Command-Line** Run `rails s` in command line.
 
-**Open Web Browser and go to URL *Localhost:3000/blade_smiths*** Enjoy the app :)
+**Open Web Browser and go to URL *Localhost:3000/brands*** Enjoy the app :)
 
 ## Features
 
-From the main page, the user will be able to navigate through *Bladesmiths* and their *Blades*. The user can easily access, manipulate, and sort information from within the database.
+From the main page, the user will be able to navigate through *Brands* and their *Cards*. The user can easily access, manipulate, and sort information from within the database.
 
 ## Database Schema
 
