@@ -94,6 +94,5 @@ RSpec.describe 'Brands Show' do
     expect(current_path).to eq('/brands')
 
     expect(page).to_not have_content("#{@brand_1.name}")
-    expect(page).to_not have_content("#{@brand_1.year}")
   end
 end
