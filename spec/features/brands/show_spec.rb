@@ -10,10 +10,10 @@ RSpec.describe 'Brands Show' do
     @card_3 = @brand_1.cards.create!(player_name: 'Ja Morant', description: 'Purple Ice Auto', graded: true, value: 900.00)
   end
   # User Story 2, Parent Show
-   # As a visitor
-   # When I visit '/parents/:id'
-   # Then I see the parent with that id including the parent's attributes:
-   # - data from each column that is on the parent table
+    # As a visitor
+    # When I visit '/parents/:id'
+    # Then I see the parent with that id including the parent's attributes:
+    # - data from each column that is on the parent table
   it 'shows all brands ids and attributes' do
     visit "/brands/#{@brand_1.id}"
 
@@ -26,9 +26,9 @@ RSpec.describe 'Brands Show' do
     expect(page).to_not have_content(@brand_2.name)
   end
   # User Story 7, Parent Child Count
-  # As a visitor
-  # When I visit a parent's show page
-  # I see a count of the number of children associated with this parent
+    # As a visitor
+    # When I visit a parent's show page
+    # I see a count of the number of children associated with this parent
   it 'shows the amount of cards per brand' do
     visit "/brands/#{@brand_1.id}"
 
@@ -81,7 +81,7 @@ RSpec.describe 'Brands Show' do
     # and I am redirected to the parent index page where I no longer see this parent
   it 'has link to delete a brand' do
     visit '/brands'
-
+    
     expect(page).to have_content("#{@brand_1.name}")
     expect(page).to have_content("#{@brand_1.year}")
 
