@@ -67,4 +67,19 @@ RSpec.describe 'Cards Index' do
     expect(page).to_not have_content(@card_2.value)
     expect(page).to_not have_content(@card_2.graded)
   end
+  # User Story 18, Child Update From Childs Index Page
+    # As a visitor
+    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+    # Next to every child, I see a link to edit that child's info
+    # When I click the link
+    # I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 11
+  it 'has links to edit card information' do
+    visit '/cards'
+
+    within '#card-0' do
+      expect(page).to have_link('Edit Card')
+      click_link 'Edit Card'
+      expect(current_path).to eq("/cards/#{@card_1.id}/edit")
+    end
+  end
 end
