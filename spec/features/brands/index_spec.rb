@@ -18,7 +18,6 @@ RSpec.describe 'Brands Index' do
     expect(page).to have_content(@brand_2.name)
     expect(page).to have_content(@brand_3.name)
   end
-
   # User Story 6, Parent Index sorted by Most Recently Created
     # As a visitor
     # When I visit the parent index,
@@ -31,7 +30,6 @@ RSpec.describe 'Brands Index' do
     expect(@brand_2.name).to appear_before(@brand_1.name)
     # save_and_open_page
   end
-
   # User Story 8, Child Index Link
     # As a visitor
     # When I visit any page on the site
@@ -44,7 +42,6 @@ RSpec.describe 'Brands Index' do
     expect(current_path).to eq('/cards')
     # save_and_open_page
   end
-
   # User Story 9, Parent Index Link
     # As a visitor
     # When I visit any page on the site
@@ -57,5 +54,17 @@ RSpec.describe 'Brands Index' do
     expect(current_path).to eq('/brands')
     # save_and_open_page
   end
+  # User Story 17, Parent Update From Parent Index Page
+    # As a visitor
+    # When I visit the parent index page
+    # Next to every parent, I see a link to edit that parent's info
+    # When I click the link
+    # I should be taken to that parents edit page where I can update its information just like in User Story 4
+  it 'has links to edit brands' do
+   visit '/brands'
 
-end
+   expect(page).to have_link('Edit')
+   click_link 'Edit'
+   expect(current_path).to eq("/brands/#{@brand_1.id}/edit")
+   end
+ end
