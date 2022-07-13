@@ -18,8 +18,13 @@ class CardsController < ApplicationController
     redirect_to "/cards/#{card.id}"
   end
 
-    private
-    def card_params
-    params.permit(:player_name, :description, :graded, :value)
+  def destroy
+    Card.destroy(params[:id])
+    redirect_to '/cards'
+  end
+
+  private
+  def card_params
+  params.permit(:player_name, :description, :graded, :value)
   end
 end

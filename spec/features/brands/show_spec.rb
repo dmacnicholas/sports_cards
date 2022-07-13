@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Brands Show' do
   before :each do
+
     @brand_1 = Brand.create!(name: 'Prizm', year: 2022, sold_at_retail: false)
     @brand_2 = Brand.create!(name: 'Mosaic', year: 2022, sold_at_retail: true)
     @brand_3 = Brand.create!(name: 'Donruss', year: 2022, sold_at_retail: true)
@@ -81,7 +82,7 @@ RSpec.describe 'Brands Show' do
     # and I am redirected to the parent index page where I no longer see this parent
   it 'has link to delete a brand' do
     visit '/brands'
-    
+
     expect(page).to have_content("#{@brand_1.name}")
     expect(page).to have_content("#{@brand_1.year}")
 
