@@ -30,5 +30,29 @@ RSpec.describe 'Brands Edit' do
    expect(current_path).to eq("/brands/#{@brand_1.id}")
    expect(page).to have_content('Chronicles')
    expect(page).to have_content('2021')
- end
+  end
+  # User Story 19, Parent Delete
+    # As a visitor
+    # When I visit a parent show page
+    # Then I see a link to delete the parent
+    # When I click the link "Delete Parent"
+    # Then a 'DELETE' request is sent to '/parents/:id',
+    # the parent is deleted, and all child records are deleted
+    # and I am redirected to the parent index page where I no longer see this parent
+  it 'has link to delete a brand' do
+    visit '/brands'
+
+    expect(page).to have_content("#{@brand_1.name}")
+    expect(page).to have_content("#{@brand_1.year}")
+
+    visit "/brands/#{@brand_1.id}"
+
+    expect(page).to have_link('Delete Brand')
+
+    click_link 'Delete Brand'
+    expect(current_path).to eq('/brands')
+
+    expect(page).to_not have_content("#{@brand_1.name}")
+    expect(page).to_not have_content("#{@brand_1.year}")
+  end
 end
