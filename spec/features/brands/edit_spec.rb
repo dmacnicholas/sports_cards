@@ -30,5 +30,5 @@ RSpec.describe 'Brands Edit' do
    expect(current_path).to eq("/brands/#{@brand_1.id}")
    expect(page).to have_content('Chronicles')
    expect(page).to have_content('2021')
- end
+  end
 end

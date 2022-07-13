@@ -47,4 +47,28 @@ RSpec.describe 'Cards Show' do
     expect(current_path).to eq('/brands')
     # save_and_open_page
   end
+  # User Story 20, Child Delete
+    # As a visitor
+    # When I visit a child show page
+    # Then I see a link to delete the child "Delete Child"
+    # When I click the link
+    # Then a 'DELETE' request is sent to '/child_table_name/:id',
+    # the child is deleted,
+    # and I am redirected to the child index page where I no longer see this child
+  it 'has link to delete tree' do
+    visit '/cards'
+
+    expect(page).to have_content("#{@card_1.player_name}")
+    expect(page).to have_content("#{@card_1.description}")
+
+    visit "/cards/#{@card_1.id}"
+
+    expect(page).to have_link('Delete Card')
+
+    click_link 'Delete Card'
+    expect(current_path).to eq('/cards')
+
+    expect(page).to_not have_content("#{@card_1.player_name}")
+    expect(page).to_not have_content("#{@card_1.description}")
+  end
 end

@@ -1,5 +1,5 @@
 class Brand < ApplicationRecord
-  has_many :cards
+  has_many :cards, dependent: :delete_all
   validates :name, presence: true
   validates :year, presence: true
   validates :sold_at_retail, inclusion: [true, false]

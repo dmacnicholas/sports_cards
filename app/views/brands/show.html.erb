@@ -3,6 +3,7 @@
 
 <p><%= link_to "Update Brand", "/brands/#{@brand.id}/edit" %></p>
 
+
 <h1><%= @brand.name %></h1>
 <p><a href="/brands/<%="#{@brand.id}"%>/cards">Cards</a></p>
 <p>Number of Cards: <%= @brand.card_count %></p>
@@ -10,3 +11,5 @@
 <p>Sold at Retail: <%= @brand.sold_at_retail %></p>
 <p>Created At: <%= @brand.created_at %></p>
 <p>Updated At: <%= @brand.updated_at %></p>
+
+<p><%= link_to 'Delete Brand', "/brands/#{@brand.id}", method: :delete%></p>
