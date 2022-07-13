@@ -75,4 +75,29 @@ RSpec.describe 'Brands Index' do
        expect(page).to have_link('Edit Brand', href: "/brands/#{@brand_1.id}/edit")
     end
   end
- end
+  # User Story 22, Parent Delete From Parent Index Page
+    # As a visitor
+    # When I visit the parent index page
+    # Next to every parent, I see a link to delete that parent
+    # When I click the link
+    # I am returned to the Parent Index Page where I no longer see that parent
+  it 'has link to delete next to each brand' do
+    visit '/brands'
+
+    within '#brand_0' do
+      # most recent first
+      expect(page).to have_content("#{@brand_3.name}")
+      expect(page).to have_link('Delete Brand')
+    end
+
+    within '#brand_1' do
+      expect(page).to have_content("#{@brand_2.name}")
+      expect(page).to have_link('Delete Brand')
+      click_link 'Delete Brand'
+    end
+
+    expect(current_path).to eq('/brands')
+    expect(page).to have_content("#{@brand_2.name}")
+    expect(page).to_not have_content("#{@brand_3.name}")
+  end
+end
