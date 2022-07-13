@@ -97,13 +97,13 @@ RSpec.describe 'Cards Index' do
    end
 
    within '#card-1' do
-     expect(page).to have_content("#{@card_2.player_name}")
+     expect(page).to have_content("#{@card_3.player_name}")
      expect(page).to have_link('Delete Card')
      click_link 'Delete'
    end
 
    expect(current_path).to eq('/cards')
    expect(page).to have_content("#{@card_1.player_name}")
-   expect(page).to_not have_content("#{@card_2.player_name}")
+   expect(page).to_not have_content("#{@card_3.player_name}")
  end
 end
