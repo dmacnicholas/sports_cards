@@ -1,15 +1,18 @@
 <p><a href="/brands">Brands Index</a></p>
 <p><a href="/cards">Cards Index</a></p>
 
+
 <%= link_to 'New Card', "/brands/#{@brand.id}/cards/new" %>
 
-<% @cards.each do |card| %>
-  <h3><%= card.player_name %></h3>
-  <p><%= card.description %></p>
-  <p><%= card.graded %></p>
-  <p><%= card.value %></p>
-  <p><%= card.created_at %></p>
-  <p><%= card.updated_at %></p>
+<% @cards.each_with_index do |card, index| %>
+ <div id="card-<%= index %>">
+  <h3>Player Name:<%= card.player_name %> | <a href="/cards/<%= "#{card.id}" %>/edit">Edit Card</a></h3>
+  <p>Description:<%= card.description %></p>
+  <p>Graded:<%= card.graded %></p>
+  <p>Value:<%= card.value %></p>
+  <p>Created At:<%= card.created_at %></p>
+  <p>Updated At:<%= card.updated_at %></p>
+</div>
 <% end %>
 
 <%= link_to 'Display in Alphabetical Order', "/brands/#{@brand.id}/cards?sort=alpha" %>

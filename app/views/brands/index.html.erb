@@ -8,6 +8,7 @@
 <% @brands.each_with_index do |brand, index| %>
 <div id="brand-<%=index%>">
   <h3>Name: <%= brand.name %> | <a href="/brands/<%="#{brand.id}"%>/edit">Edit Brand</a></h3>
+  <p>Year: <%= brand.year %></p>
   <p>Created At: <%= brand.created_at %></p>
 </div>
 <% end %>

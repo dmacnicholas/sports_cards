@@ -1,10 +1,12 @@
 <p><a href="/brands">Brands Index</a></p>
 <p><a href="/cards">Cards Index</a></p>
 
-<h1>All Cards</h1>
-<% @cards.show_graded_cards.each do |card| %>
-  <h3>Player Name: <%= card.player_name %></h3>
+<h1>All Graded Cards</h1>
+<% @cards.show_graded_cards.each.each_with_index do |card, index| %>
+<div id="card-<%=index%>">
+  <h3>Player Name: <%= card.player_name %> | <a href="/cards/<%= "#{card.id}" %>/edit">Edit Card</a></h3>
   <p>Description: <%= card.description %></p>
   <p>Graded: <%= card.graded %></p>
   <p>Value: <%= card.value %></p>
+</div>
 <% end %>
