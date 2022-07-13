@@ -4,7 +4,8 @@
 <h1>All Graded Cards</h1>
 <% @cards.show_graded_cards.each.each_with_index do |card, index| %>
 <div id="card-<%=index%>">
-  <h3>Player Name: <%= card.player_name %> | <a href="/cards/<%= "#{card.id}" %>/edit">Edit Card</a></h3>
+  <h3>Player Name: <%= card.player_name %> | <a href="/cards/<%= "#{card.id}" %>/edit">Edit Card</a> /
+  <%= link_to "Delete Card", "/cards/#{card.id}", method: :delete %></h3>
   <p>Description: <%= card.description %></p>
   <p>Graded: <%= card.graded %></p>
   <p>Value: <%= card.value %></p>

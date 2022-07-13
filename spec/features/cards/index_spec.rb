@@ -82,4 +82,28 @@ RSpec.describe 'Cards Index' do
       expect(current_path).to eq("/cards/#{@card_1.id}/edit")
     end
   end
+  # User Story 23, Child Delete From Childs Index Page
+    # As a visitor
+    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+    # Next to every child, I see a link to delete that child
+    # When I click the link
+    # I should be taken to the `child_table_name` index page where I no longer see that child
+  it 'has link to delete next to each card' do
+   visit '/cards'
+
+   within '#card-0' do
+     expect(page).to have_content("#{@card_1.player_name}")
+     expect(page).to have_link('Delete Card')
+   end
+
+   within '#card-1' do
+     expect(page).to have_content("#{@card_3.player_name}")
+     expect(page).to have_link('Delete Card')
+     click_link 'Delete'
+   end
+
+   expect(current_path).to eq('/cards')
+   expect(page).to have_content("#{@card_1.player_name}")
+   expect(page).to_not have_content("#{@card_3.player_name}")
+ end
 end
