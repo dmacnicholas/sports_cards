@@ -22,8 +22,12 @@ class BrandsController < ApplicationController
   def update
     brand = Brand.find(params[:id])
     brand.update(brand_params)
-    brand.save
     redirect_to "/brands/#{brand.id}"
+  end
+
+  def destroy
+    Brand.destroy(params[:id])
+    redirect_to '/brands'
   end
 
   private
