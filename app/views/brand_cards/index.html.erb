@@ -6,13 +6,13 @@
 
 <% @cards.each_with_index do |card, index| %>
  <div id="card-<%= index %>">
-  <h3>Player Name:<%= card.player_name %> | <a href="/cards/<%= "#{card.id}" %>/edit">Edit Card</a>/
+  <h3>Player Name: <%= card.player_name %> | <a href="/cards/<%= "#{card.id}" %>/edit">Edit Card</a> /
   <%= link_to "Delete Card", "/cards/#{card.id}", method: :delete %></h3>
-  <p>Description:<%= card.description %></p>
-  <p>Graded:<%= card.graded %></p>
-  <p>Value:<%= card.value %></p>
-  <p>Created At:<%= card.created_at %></p>
-  <p>Updated At:<%= card.updated_at %></p>
+  <p>Description: <%= card.description %></p>
+  <p>Graded: <%= card.graded %></p>
+  <p>Value: <%= card.value %></p>
+  <p>Created At: <%= card.created_at %></p>
+  <p>Updated At: <%= card.updated_at %></p>
 </div>
 <% end %>
 
