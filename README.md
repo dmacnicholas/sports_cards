@@ -37,7 +37,7 @@ The project home page and requirements can be found [here](https://backend.turin
 
 ## Getting Started
 
-**Fork this repository:** [Sports Cards](https://github.com/dmacnicholas/sports_cards
+**Fork this repository:** [Sports Cards](https://github.com/dmacnicholas/sports_cards)
 
 **Clone your forked repository:** Run `git clone` with the copied URL.
 
