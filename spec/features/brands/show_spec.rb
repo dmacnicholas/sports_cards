@@ -6,9 +6,6 @@ RSpec.describe 'Brands Show' do
     @brand_1 = Brand.create!(name: 'Prizm', year: 2022, sold_at_retail: false)
     @brand_2 = Brand.create!(name: 'Mosaic', year: 2022, sold_at_retail: true)
     @brand_3 = Brand.create!(name: 'Donruss', year: 2022, sold_at_retail: true)
-    @card_1 = @brand_1.cards.create!(player_name: 'LeBron James', description: 'Red Fast Break', graded: true, value: 250.00)
-    @card_2 = @brand_1.cards.create!(player_name: 'Luka Doncic', description: 'Blue Fast Break', graded: false, value: 135.00)
-    @card_3 = @brand_1.cards.create!(player_name: 'Ja Morant', description: 'Purple Ice Auto', graded: true, value: 900.00)
   end
   # User Story 2, Parent Show
     # As a visitor
